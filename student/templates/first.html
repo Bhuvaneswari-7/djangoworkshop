@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>student list</h1>
+    <ul>
+        <table border="5">
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>email</th>
+                <th>gender</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{student.first_name}}</td>
+                <td>{{student.last_name}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.gender}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <form name="f1" method="POST" >
+        {% csrf_token %}
+        <fieldset style="max-width:450px">
+        <legend>LOGIN FORM </legend>
+        <table align="center">
+        <tr>
+        <td>First name: <input type="text" name="t1"></td>
+        </tr>            
+        <tr>
+        <td>Last name: <input type="password" name="t2"></td>
+        </tr>
+        <tr>
+        <td>Email: <input type="email" name="t3"></td>
+        </tr>
+        <tr>
+            <td>Gender: <input type="radio" name="r1"> Female <input type="radio" name="r1"> Male</td>
+            </tr>
+        <tr>
+        <td><input type="submit" name="b1" value="SUBMIT"></td>
+        <td><input type="reset" name="b2" value="RESET"></td>
+        </tr>
+        </table>
+        </fieldset>
+        </form>
+        </body>
+    </ul>
+</body>
+</html>
